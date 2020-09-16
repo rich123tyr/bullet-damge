@@ -1,10 +1,13 @@
+var engine, world;
 var wall,thickness;
 var bellet,speed,weight;
-var danage;
+var damage;
 
 function setup() {
   createCanvas(1200,400);
   bullet = createSprite(25, 200, 30, 10);
+
+
   thickness = random(22,83);
   wall = createSprite(1140,200,thickness,height/2);
   speed=random(55,90);
@@ -20,10 +23,10 @@ function draw() {
     bullet.velocityX=0;
     damage = 0.5*weight*speed*speed/(thickness*1.5);
     if(damage<10){
-      bullet.shapeColor=color("green");
+      wall.shapeColor=color("green");
     }
     if(damage>10){
-      bullet.shapeColor=color("red");
+      wall.shapeColor=color("red");
     }
   }
   
